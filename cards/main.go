@@ -5,12 +5,7 @@ func main() {
 	//Slice declaration
 	cards := newDeck()
 
-	// calling deal
-	hand, remainingCards := deal(cards, 5)
-
-	hand.print()
-	remainingCards.print()
-
+	cards.saveToFile("myFIle")
 }
 
 func newCard() string {

@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
+	"strings"
 )
 
 // Create  a new type of 'deck'
@@ -27,6 +29,7 @@ func newDeck() deck {
 }
 
 // Print the Deck
+// function with a receiver
 func (d deck) print() {
 	for i, card := range d {
 		fmt.Println(i, card)
@@ -41,4 +44,15 @@ func deal(d deck, handSize int) (deck, deck) {
 
 	return d[:handSize], d[handSize:]
 
+}
+
+// convert the []deck to a []string  to join and return a single string
+func (d deck) toString() string {
+	return strings.Join([]string(d), ",")
+}
+
+// convert to []byte and save to a file
+func (d deck) saveToFile(filename string) error {
+
+	return ioutil.WriteFile(filename, []byte(d.toString()), 06666)
 }
