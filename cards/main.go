@@ -3,7 +3,7 @@ package main
 func main() {
 
 	//Slice declaration
-	cards := deck{"Nine of Diamonds", newCard()}
+	cards := newDeck()
 
 	//adding elements to a slice
 	cards = append(cards, "Two of Hearts")
