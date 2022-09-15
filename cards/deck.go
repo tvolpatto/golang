@@ -13,7 +13,7 @@ func newDeck() deck {
 	cards := deck{}
 
 	cardSuits := []string{"Spades", "Diamonds", "Hearts", "Clubs"}
-	cardValues := []string{"Ace", "Two", "Three", "Four", "Five", "Six"}
+	cardValues := []string{"Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"}
 
 	// we use the underscore if we don't need the indexes
 	for _, suit := range cardSuits {
@@ -32,5 +32,13 @@ func (d deck) print() {
 		fmt.Println(i, card)
 
 	}
+
+}
+
+// slice range sintax:
+// deck[startIndexIncluding:upTotheIndexNotIncluded]
+func deal(d deck, handSize int) (deck, deck) {
+
+	return d[:handSize], d[handSize:]
 
 }

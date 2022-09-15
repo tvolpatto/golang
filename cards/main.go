@@ -5,10 +5,11 @@ func main() {
 	//Slice declaration
 	cards := newDeck()
 
-	//adding elements to a slice
-	cards = append(cards, "Two of Hearts")
+	// calling deal
+	hand, remainingCards := deal(cards, 5)
 
-	cards.print()
+	hand.print()
+	remainingCards.print()
 
 }
 
