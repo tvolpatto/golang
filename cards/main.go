@@ -2,10 +2,9 @@ package main
 
 func main() {
 
-	//Slice declaration
-	cards := newDeck()
+	cards := newDeckFromFile("myFoIle")
 
-	cards.saveToFile("myFIle")
+	cards.print()
 }
 
 func newCard() string {

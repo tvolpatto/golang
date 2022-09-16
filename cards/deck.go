@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"math/rand"
 	"os"
 	"strings"
 )
@@ -58,6 +59,7 @@ func (d deck) saveToFile(filename string) error {
 	return ioutil.WriteFile(filename, []byte(d.toString()), 06666)
 }
 
+// load from a file
 func newDeckFromFile(filename string) deck {
 	bs, err := ioutil.ReadFile(filename)
 
@@ -70,4 +72,13 @@ func newDeckFromFile(filename string) deck {
 	s := strings.Split(string(bs), ",")
 
 	return deck(s)
+}
+
+func (d deck) shuffle() {
+	for i := range d {
+		newPos := rand.Intn(len(d) - 1)
+
+		d[i], d[newPos] = d[newPos], d[i]
+	}
+
 }
