@@ -44,9 +44,7 @@ func (d deck) print() {
 // slice range sintax:
 // deck[startIndexIncluding:upTotheIndexNotIncluded]
 func deal(d deck, handSize int) (deck, deck) {
-
 	return d[:handSize], d[handSize:]
-
 }
 
 // convert the []deck to a []string  to join and return a single string
