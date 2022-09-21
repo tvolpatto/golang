@@ -25,12 +25,19 @@ func main() {
 		},
 	}
 
-	var juca person
-	juca.firstName = "Juca"
-	juca.lastName = "Feliz"
+	//& - get the memory address of the variable
+	thPointer := &thyago
+	thPointer.updateName("John")
+	thyago.print()
 
-	fmt.Println(thyago)
-	//fmt.Println(john)
-	fmt.Printf("%+v", juca)
+}
 
+func (p person) print() {
+	fmt.Printf("%+v", p)
+}
+
+// * - is a type description - it means we are working with a pointer
+func (pointerToPerson *person) updateName(newFirstName string) {
+	//* - give the value that memory address is pointing at
+	(*pointerToPerson).firstName = newFirstName
 }
