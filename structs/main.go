@@ -7,4 +7,7 @@ type person struct {
 
 func main() {
 
+	john := person{"John", "Travolta"}
+	thyago := person{firstName: "Thyago", lastName: "Volpatto"}
+
 }
