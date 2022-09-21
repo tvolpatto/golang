@@ -23,7 +23,7 @@ func main() {
 
 func printMap(c map[string]string) {
 	for key, value := range c {
-		fmt.Printf(" The hex color for %v is %v", key, value)
-		fmt.Println()
+		fmt.Printf(" The hex color for %v is %v \n", key, value)
+
 	}
 }
