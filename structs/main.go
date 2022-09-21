@@ -25,9 +25,7 @@ func main() {
 		},
 	}
 
-	//& - get the memory address of the variable
-	thPointer := &thyago
-	thPointer.updateName("John")
+	thyago.updateName("John")
 	thyago.print()
 
 }
