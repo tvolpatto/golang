@@ -12,7 +12,12 @@ func main() {
 	john := person{"John", "Travolta"}
 	thyago := person{firstName: "Thyago", lastName: "Volpatto"}
 
+	var juca person
+	juca.firstName = "Juca"
+	juca.lastName = "Feliz"
+
 	fmt.Println(thyago)
-	fmt.Println(alex)
+	fmt.Println(john)
+	fmt.Printf("%+v", juca)
 
 }
